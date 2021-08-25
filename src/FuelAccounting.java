@@ -29,9 +29,9 @@ public class FuelAccounting {
             int firstindex = array[j].indexOf("-");
             int secondindex = array[j].lastIndexOf("-");
 
-            int number_transport = Integer.valueOf(array[j].substring(firstIndex_ + 1, firstindex));  //получили параметр  number_auto для передачи в элемент (объект) списка
+            int number_transport = Integer.parseInt(array[j].substring(firstIndex_ + 1, firstindex));  //получили параметр  number_auto для передачи в элемент (объект) списка
             int param2 = 0; //получили параметр param для передачи в элемент (объект) списка
-            int probegCar = 0; //получили параметр probeg для передачи в элемент (объект) списка
+            int probegCar; //получили параметр probeg для передачи в элемент (объект) списка
             if (secondindex == firstindex) {
                 probegCar = Integer.parseInt(array[j].substring(firstindex + 1));
             } else {
@@ -42,12 +42,12 @@ public class FuelAccounting {
             if (!listTransport.isEmpty()) {
                 for (int i = 0; i < listTransport.size(); i++) {
                     boolean check = listTransport.get(i).type_transport.equals(type_transport_in_array) && listTransport.get(i).number_auto.equals(number_transport);
-                    if (check == true) {
+                    if (check) {
                         listTransport.get(i).probeg = listTransport.get(i).probeg + probegCar;
                         listTransport.get(i).param = listTransport.get(i).param + param2;
                         //System.out.println("изменяется элемент коллекции " + listTransport.get(i));
                         break;
-                    } else if (!check == true && i == listTransport.size() - 1) {
+                    } else if (!check && i == listTransport.size() - 1) {
                         Transport transport = new Transport(type_transport_in_array, number_transport, probegCar, param2);
                         listTransport.add(transport);
                         break;
@@ -99,7 +99,7 @@ public class FuelAccounting {
         listValueCosts.add(cost_of_expenses_for_fuel_cranes);
 
         Double maxValueCosts = Collections.max(listValueCosts);
-        String type_transport_max = null;
+        String type_transport_max;
         if (maxValueCosts == cost_of_expenses_for_fuel_car) {
             type_transport_max = "Легковой автомобиль";
         } else if (maxValueCosts == cost_of_expenses_for_fuel_truck) {
@@ -112,7 +112,7 @@ public class FuelAccounting {
         System.out.println("Тип авто, имеющий наибольшую стоимость расходов, - это " + type_transport_max);
 
         Double minValueCosts = Collections.min(listValueCosts);
-        String type_transport_min = null;
+        String type_transport_min;
         if (minValueCosts == cost_of_expenses_for_fuel_car) {
             type_transport_min = "Легковой автомобиль";
         } else if (minValueCosts == cost_of_expenses_for_fuel_truck) {

@@ -22,7 +22,6 @@ public class FuelCosts {
                 cost_of_expenses_for_fuel_transport = t.probeg * fuel_consumption_per_1_km_car * cost_of_a_liter_of_fuel_car;
                 break;
 
-
             case "Грузовой":
                 double fuel_consumption_per_1_km_truck = fuel_consumption_per_100_km_truck / 100;
                 cost_of_expenses_for_fuel_transport = t.probeg * fuel_consumption_per_1_km_truck * cost_of_a_liter_of_fuel_truck;

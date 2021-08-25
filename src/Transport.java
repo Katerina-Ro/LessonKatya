@@ -4,8 +4,6 @@ public class Transport {
     Integer probeg;
     Integer param;
 
-    public Transport (){}
-
     public Transport(String type_transport, int number_auto, int probeg, int param) {
         this.type_transport = type_transport;
         this.number_auto = number_auto;
