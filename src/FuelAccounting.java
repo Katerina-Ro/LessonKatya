@@ -92,13 +92,13 @@ public class FuelAccounting {
         System.out.println();
 
         //Получаем тип транспорта наибольшего и наименьшего значений
-        List listValueCosts = new ArrayList();
+        List <Double> listValueCosts = new ArrayList <>();
         listValueCosts.add(cost_of_expenses_for_fuel_car);
         listValueCosts.add(cost_of_expenses_for_fuel_truck);
         listValueCosts.add(cost_of_expenses_for_fuel_passenger_transport);
         listValueCosts.add(cost_of_expenses_for_fuel_cranes);
 
-        Double maxValueCosts = (Double) Collections.max(listValueCosts);
+        Double maxValueCosts = Collections.max(listValueCosts);
         String type_transport_max = null;
         if (maxValueCosts == cost_of_expenses_for_fuel_car) {
             type_transport_max = "Легковой автомобиль";
@@ -111,7 +111,7 @@ public class FuelAccounting {
         }
         System.out.println("Тип авто, имеющий наибольшую стоимость расходов, - это " + type_transport_max);
 
-        Double minValueCosts = (Double) Collections.min(listValueCosts);
+        Double minValueCosts = Collections.min(listValueCosts);
         String type_transport_min = null;
         if (minValueCosts == cost_of_expenses_for_fuel_car) {
             type_transport_min = "Легковой автомобиль";
