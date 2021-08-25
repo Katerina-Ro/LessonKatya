@@ -133,7 +133,6 @@ public class FuelAccounting {
         in.close();
     }
 
-
     public static void getInfoTransport(String console_input) {
         Comparator<Transport> comparator = new TransportProbegComparator().thenComparing(new TransportParamComparator());
         Collections.sort(listTransport, comparator);

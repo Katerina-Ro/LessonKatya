@@ -10,7 +10,6 @@ public class Transport {
         this.probeg = probeg;
         this.param = param;
     }
-
     @Override
     public String toString() {
         return "Transport{" +

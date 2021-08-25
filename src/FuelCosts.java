@@ -39,7 +39,6 @@ public class FuelCosts {
         }
         return cost_of_expenses_for_fuel_transport;
     }
-
     @Override
     public String toString() {
         return "FuelCosts{" +
